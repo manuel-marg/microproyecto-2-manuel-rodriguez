@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { PaginacionComponent } from './components/paginacion/paginacion.component';
+import { DetallesComponent } from './components/detalles/detalles.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PaginacionComponent } from './components/paginacion/paginacion.componen
     LoginComponent,
     SignUpComponent,
     PaginacionComponent,
+    DetallesComponent,
   ],
   imports: [
     BrowserModule,
