@@ -5,7 +5,7 @@
 
 
             <div class="jumbotron">
-                <app-detalles [character]="selected" *ngIf="!showtable" (back)="back()"></app-detalles>
+                <app-detalles [characterRev]="selected" *ngIf="!showtable" (back)="back()"></app-detalles>
 
                 <div class="container" *ngIf="showtable">
                     <h1 class="display-4">Lista de Personajes</h1>
@@ -17,7 +17,6 @@
                                 <th scope="col">Imagen</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col"></th>
-                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,7 +25,6 @@
                                 <td><img [src]="character.image" style="height: 1rem;"></td>
                                 <td>{{ character.name }}</td>
                                 <td><button type="button" class="btn btn-outline-primary btn-sm" (click)="characterSelected(character)"><i class="far fa-address-card"></i></button></td>
-                                <td><button type="button" class="btn btn-outline-success btn-sm"><i class="fas fa-star"></i></button></td>
                             </tr>
                         </tbody>
                     </table>
