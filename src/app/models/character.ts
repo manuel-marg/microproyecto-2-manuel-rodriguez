@@ -4,7 +4,7 @@ export interface Character {
     id: number;
     name: string;
     status: string;
-    spacies: string;
+    species: string;
     type: string;
     gender: string;
     origin: Origin;

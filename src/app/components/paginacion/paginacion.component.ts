@@ -15,13 +15,13 @@ export class PaginacionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  next( url:string): void {
-    this.avisador.emit(url)
+  next( ): void {
+    this.avisador.emit(this.url_next)
     //this.callNewPage(url)
   }
   
-  previous(url:string): void {
-    this.avisador.emit(url)
+  previous(): void {
+    this.avisador.emit(this.url_previous)
     //  this.callNewPage(url)
   }
 }

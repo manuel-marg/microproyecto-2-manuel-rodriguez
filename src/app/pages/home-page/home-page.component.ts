@@ -10,7 +10,8 @@ import { ApiRequestService } from 'src/app/services/api-request.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-
+  selected: Character;
+  showtable:boolean = true
   url_next: string;
   url_previous: string;
   characters: Array<Character> = [];
@@ -45,5 +46,14 @@ export class HomePageComponent implements OnInit {
   })
 }
 
+characterSelected( characterRecived: Character) {
+  this.selected = characterRecived;
+  console.log(this.selected)
+  this.showtable = false;
+}
+
+back(){
+  this.showtable = true;
+}
 
 }
