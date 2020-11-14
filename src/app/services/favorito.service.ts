@@ -9,6 +9,7 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Favorito } from '../models/favorito';
+import { FavoritoContador } from '../models/favorito-contador';
 
 
 @Injectable({
@@ -16,9 +17,11 @@ import { Favorito } from '../models/favorito';
 })
 export class FavoritoService {
   private favoritoCollection: AngularFirestoreCollection<Favorito>;
+  private favoritoContadorCollection: AngularFirestoreCollection<FavoritoContador>;
 
   constructor(private db: AngularFirestore) {
     this.favoritoCollection = this.db.collection<Favorito>('favoritos');
+    this.favoritoContadorCollection = this.db.collection<FavoritoContador>('favoritosContador');
   }
 
   /**
@@ -27,6 +30,7 @@ export class FavoritoService {
   getAllFavoritos(): Observable<DocumentChangeAction<Favorito>[]> {
     return this.favoritoCollection.snapshotChanges();
   }
+
 
   /**
    * GET FAVORITO BY ID
@@ -59,5 +63,28 @@ export class FavoritoService {
    */
   deleteFavorito(docId: string): Promise<void> {
     return this.favoritoCollection.doc<Favorito>(docId).delete();
+  }
+
+    /**
+   * GET ALL FAVORITOS
+   */
+  getAllFavoritosContador(): Observable<DocumentChangeAction<FavoritoContador>[]> {
+    return this.favoritoContadorCollection.snapshotChanges();
+  }
+
+    /**
+   * DELETE FAVORITO
+   * @param docId
+   */
+  deleteFavoritoContador(docId: string): Promise<void> {
+    return this.favoritoContadorCollection.doc<FavoritoContador>(docId).delete();
+  }
+ 
+    /**
+   * CREATE NEW FAVORITO
+   * @param newFavorito
+   */
+  createFavoritoContador(newFavorito: FavoritoContador): Promise<DocumentReference> {
+    return this.favoritoContadorCollection.add(newFavorito);
   }
 }
