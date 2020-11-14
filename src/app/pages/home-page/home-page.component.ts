@@ -44,12 +44,6 @@ export class HomePageComponent implements OnInit {
     console.log("Error!");
   })
 }
-  next( url:string): void {
-    this.callNewPage(url)
-  }
-  
-  previous(url:string): void {
-    this.callNewPage(url)
-  }
+
 
 }

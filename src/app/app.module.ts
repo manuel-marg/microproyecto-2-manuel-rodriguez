@@ -18,6 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { PaginacionComponent } from './components/paginacion/paginacion.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     NavbarComponent,
     LoginComponent,
     SignUpComponent,
+    PaginacionComponent,
   ],
   imports: [
     BrowserModule,
