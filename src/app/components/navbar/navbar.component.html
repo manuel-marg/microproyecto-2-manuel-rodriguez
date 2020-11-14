@@ -9,6 +9,9 @@
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Lista de Personajes</a>
             </li>
+            <li class="nav-item" *ngIf="isAuthenticated">
+                <a class="nav-link" [routerLink]="['/mis-favoritos']" routerLinkActive="active">Mis Favoritos</a>
+            </li>
             <li class="nav-item" *ngIf="!isAuthenticated">
                 <a class="nav-link" [routerLink]="['/sign-up']" routerLinkActive="active">Sign-up</a>
             </li>

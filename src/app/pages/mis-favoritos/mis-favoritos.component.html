@@ -1,0 +1,34 @@
+<div class="container h-100">
+    <div class="row justify-content-center h-100">
+        <div class="col-sm-11 align-self-center text-center">
+            <div class="jumbotron">
+                <div class="container" id="cuerpo">
+                    <h1 class="display-4">Mis favoritos</h1>
+                    <hr class="my-4" />
+
+
+                    <div class="card mb-3" *ngFor="let character of characterFavorite">
+                        <div class="row no-gutters">
+                            <div class="col-sm-4">
+                                <img [src]="character.character.image" class="card-img" alt="...">
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-body text-left">
+                                    <h3 class="card-title">{{ character.character.name }}</h3>
+                                    <p class="card-text"><b>Localizacion:</b> {{ character.character.location.name }}</p>
+                                    <p class="card-text"><b>Especie:</b> {{ character.character.species }}</p>
+                                    <p class="card-text"><b>Género:</b> {{ character.character.gender }}</p>
+                                    <p class="card-text"><b>Origen:</b> {{ character.character.origin.name }}</p>
+                                    <p class="card-text"><b>Fecha de creación:</b> {{ character.character.created }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

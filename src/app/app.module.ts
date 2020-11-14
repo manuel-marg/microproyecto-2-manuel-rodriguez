@@ -20,6 +20,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { PaginacionComponent } from './components/paginacion/paginacion.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
+import { MisFavoritosComponent } from './pages/mis-favoritos/mis-favoritos.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DetallesComponent } from './components/detalles/detalles.component';
     SignUpComponent,
     PaginacionComponent,
     DetallesComponent,
+    MisFavoritosComponent,
   ],
   imports: [
     BrowserModule,

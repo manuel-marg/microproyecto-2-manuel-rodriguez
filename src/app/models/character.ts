@@ -7,8 +7,8 @@ export interface Character {
     species: string;
     type: string;
     gender: string;
-    origin: Origin;
-    location: Location;
+    origin: any;
+    location: any;
     image: string;
     episode: Array<string>;
     url: string;

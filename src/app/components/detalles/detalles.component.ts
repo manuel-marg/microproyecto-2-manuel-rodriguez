@@ -5,6 +5,8 @@ import { Character } from 'src/app/models/character';
 import { Favorito } from 'src/app/models/favorito';
 import { AuthService } from 'src/app/services/auth.service';
 import { FavoritoService } from 'src/app/services/favorito.service';
+import { CommonModule } from '@angular/common';  
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detalles',
