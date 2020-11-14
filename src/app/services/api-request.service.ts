@@ -16,6 +16,9 @@ export class ApiRequestService {
     return Axios.get(this.API_URL);
   }
 
+  getAllCharactersPages( url: string ): Promise<AxiosResponse<APIResponse>> {
+    return Axios.get(url);
+  }
 
   
 }

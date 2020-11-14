@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { APIResponse } from 'src/app/models/apiresponse';
 import { Character } from 'src/app/models/character';
 import { ApiRequestService } from 'src/app/services/api-request.service';
@@ -10,7 +11,8 @@ import { ApiRequestService } from 'src/app/services/api-request.service';
 })
 export class HomePageComponent implements OnInit {
 
-  responses: APIResponse ;
+  url_next: string;
+  url_previous: string;
   characters: Array<Character> = [];
 
   constructor(private apiRequests: ApiRequestService) { }
@@ -21,16 +23,33 @@ export class HomePageComponent implements OnInit {
 
   getCharacters(): void  {
     this.apiRequests.getAllCharacters().then(response  => {
-      console.log(response.data.results);
-     
-     
       this.characters = response.data.results
-      console.log(this.characters);
-      
+      this.url_next = response.data.info.next;
+      this.url_previous = response.data.info.prev;
     }).catch(error => {
       console.log("Error!");
     })
   }
+
+  callNewPage(url)
+{
+  this.apiRequests.getAllCharactersPages(url).then(response  => {
+    this.characters=[]
+    this.characters = response.data.results
+    this.url_next = response.data.info.next;
+    this.url_previous = response.data.info.prev;
+    console.log("Ejecuando funcion next()");
+    
+  }).catch(error => {
+    console.log("Error!");
+  })
+}
+  next( url:string): void {
+    this.callNewPage(url)
+  }
   
+  previous(url:string): void {
+    this.callNewPage(url)
+  }
 
 }
