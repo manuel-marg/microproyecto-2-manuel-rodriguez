@@ -12,7 +12,8 @@
             <p class="lead"> Type: {{ characterRev.type }}</p>
             <p class="lead"> Gender: {{ characterRev.gender }}</p>
             <p>
-                <button type="button" *ngIf="isAuthenticated && !isFavoriteBool" class="btn btn-outline-success btn-sm" (click)="onSubmit()"> <i class="fas fa-star"></i>  Agregar a Favoritos</button>
+                <button type="button" *ngIf="isAuthenticated && !isFavoriteBool" class="btn btn-outline-success btn-sm" [disabled]="loading" (click)="onSubmit()"> <i class="fas fa-star"></i>  Agregar a Favoritos</button>
+                <button type="button" *ngIf="isAuthenticated && isFavoriteBool" class="btn btn-outline-danger btn-sm" [disabled]="loading" (click)="deleteFavorite()"> <i class="fas fa-trash"></i>  Emiliminar de Favoritos</button>
             </p>
         </div>
     </div>

@@ -20,7 +20,7 @@ export class DetallesComponent implements OnInit {
   characterFavorite: Favorito[];
   isFavoriteBool=false
   key: string;
-
+loading= false;
   constructor(private authService: AuthService, private favoritoService : FavoritoService) { }
 
   ngOnInit(): void {
@@ -89,13 +89,26 @@ export class DetallesComponent implements OnInit {
   
 
   onSubmit(): void {
+    this.loading=true
     const dataFavorito: Favorito = {
       
       email: this.user.email,
       character: this.characterRev
+     
     };
+    this.loading=false
     console.log(dataFavorito)
     this.favoritoService.createFavorito(dataFavorito);
   }
+
+  deleteFavorite(): void {
+    this.loading=true
+    this.favoritoService.deleteFavorito(this.key).then((res) => {
+      this.isFavoriteBool = false
+      this.loading=false
+    });
+    
+  }
+
 
 }
