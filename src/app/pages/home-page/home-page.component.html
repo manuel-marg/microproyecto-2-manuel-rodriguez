@@ -2,14 +2,14 @@
     <div class="row justify-content-center h-100">
         <div class="col-sm-11 align-self-center text-center">
 
-
-
             <div class="jumbotron">
                 <app-detalles [characterRev]="selected" *ngIf="!showtable" (back)="back()"></app-detalles>
 
                 <div class="container" *ngIf="showtable">
                     <h1 class="display-4">Lista de Personajes</h1>
                     <hr class="my-4" />
+
+                    <app-buscar (filtrar)="filtrar($event)"></app-buscar>
 
                     <table class="table">
                         <thead>

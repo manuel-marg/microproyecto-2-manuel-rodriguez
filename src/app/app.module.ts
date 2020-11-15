@@ -21,6 +21,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { PaginacionComponent } from './components/paginacion/paginacion.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { MisFavoritosComponent } from './pages/mis-favoritos/mis-favoritos.component';
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { BuscarComponent } from './components/buscar/buscar.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MisFavoritosComponent } from './pages/mis-favoritos/mis-favoritos.compo
     PaginacionComponent,
     DetallesComponent,
     MisFavoritosComponent,
+    FiltroPipe,
+    BuscarComponent,
   ],
   imports: [
     BrowserModule,

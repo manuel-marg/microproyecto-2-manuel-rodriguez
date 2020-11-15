@@ -1,0 +1,62 @@
+<p class="text-right">
+    <a class="btn btn-link btm-sm" style="text-decoration: none;" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fas fa-sliders-h"></i> Filtrar
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="mb-5">
+        <form [formGroup]="busquedaForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-sm">
+                    Buscar nombre
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    Buscar especie
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="species">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    Buscar tipo
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="type">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    Genero
+                    <select class="form-control form-control" formControlName="gender">
+                        <option value="">Seleccione una opción</option>
+                        <option value="female">Femenino</option>
+                        <option value="male">Masculino</option>
+                        <option value="genderless">Sin genero</option>
+                        <option value="unknown">Desconocido</option>
+                  </select>
+                </div>
+                <div class="col-sm">
+                    Estado
+                    <select class="form-control form-control" formControlName="status">
+                    <option value="">Seleccione una opción</option>
+                    <option value="alive">Vivo</option>
+                    <option value="dead">Muerto</option>
+                    <option value="unknown">Desconocido</option>
+                  </select>
+                </div>
+                <div class="col-sm"><br>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

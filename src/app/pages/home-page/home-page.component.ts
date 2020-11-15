@@ -40,9 +40,16 @@ export class HomePageComponent implements OnInit {
     this.url_next = response.data.info.next;
     this.url_previous = response.data.info.prev;
     console.log("Ejecuando funcion next()");
+    let audio = new Audio();
+    audio.src = "../../../assets/sounds/mensaje_busqueda.mp3";
+    audio.load();
+    audio.play();
     
   }).catch(error => {
-    console.log("Error!");
+    let audio = new Audio();
+    audio.src = "../../../assets/sounds/mensaje_no_resultados.mp3";
+    audio.load();
+    audio.play();
   })
 }
 
@@ -54,6 +61,12 @@ characterSelected( characterRecived: Character) {
 
 back(){
   this.showtable = true;
+}
+
+
+filtrar(urlBusqueda){
+ console.log("ESTE ES EL URL EN LA CLASE PADRE: "+urlBusqueda)
+ this.callNewPage(urlBusqueda)
 }
 
 }
